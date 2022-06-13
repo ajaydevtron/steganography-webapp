@@ -5,32 +5,43 @@
 var imgdatauri;
 
 function readURL(input) {
-  if (input.files && input.files[0]) {
-    var reader = new FileReader();
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-    reader.onload = function(e) {
-      document.querySelector("#image1").src = e.target.result;
-      imgdatauri = e.target.result;
-    };
-  }
-  reader.readAsDataURL(input.files[0]);
+        reader.onload = function(e) {
+            document.querySelector("#image1").src = e.target.result;
+            imgdatauri = e.target.result;
+        };
+    }
+    reader.readAsDataURL(input.files[0]);
 }
 
 
 function decode(input) {
     if (input.files && input.files[0]) {
-      var reader = new FileReader();
-  
-      reader.onload = function(e) {
-          console.log(steg.decode(e.target.result));
-        
-        document.querySelector('#decoded').innerText = steg.decode(e.target.result);
-      };
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            console.log(steg.decode(e.target.result));
+
+            document.querySelector('#decoded').innerText = steg.decode(e.target.result);
+        };
     }
     reader.readAsDataURL(input.files[0]);
-  }
+}
+
 
 
 function hideText() {
-  document.querySelector("#image2").src = steg.encode(document.querySelector('#text').value, imgdatauri);
+    imgdatauri = steg.encode(document.querySelector('#text').value, imgdatauri)
+    document.querySelector("#image2").src = imgdatauri;
+    var attr = document.getElementById('d-btn');
+    attr.removeAttribute('hidden');
+    document.querySelector("a").href = imgdatauri;
+    document.querySelector("#msg-encoded").innerHTML = encodedimg;
+}
+
+function downloadImg(url) {
+    var ele = document.getElementsByTagName("#dwn");
+    // console.log(ele);
 }

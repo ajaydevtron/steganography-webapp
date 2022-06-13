@@ -1,29 +1,132 @@
-.cont {
+/* .cont {
     display: flex;
     height: 90vh;
-    width: 100vw;
-    justify-content: center;
+    /* width: 100vw; 
     align-items: center;
     flex-direction: column;
+    justify-content: center;
+}
+
+.file-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 100px;
 }
 
 .img-cont {
-    margin-top: 5rem;
     display: flex;
-
-}
-
-.img1 {
-    margin-right: 15rem;
-    margin-bottom: 10rem;
+    align-items: center;
+    justify-content: center; 
+    margin-top: 5rem;
+    position: absolute;
+    top: 100px;
 }
 
 img {
-    width: 300px;
+    width: 200px;
 }
 
+#img1 {
+    position: absolute;
+    left: -100px;
+    top: 10px;
+     margin-right: 15rem;
+    margin-bottom: 10rem; 
+}
+
+#img2 {
+    position: absolute;
+    left: 100px;
+    top: 10px;
+}
+
+ */
+
+.file-input {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 25%;
+    left: 22%;
+}
+
+img {
+    width: 200px;
+}
+
+#div-img1 {
+    margin-right: 30px;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+#div-img2 {
+    margin-left: 270px;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.decoded-cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 70%;
+    left: 20%;
+    height: 120px;
+}
+
+h5 {
+    text-align: center;
+}
+
+.btn {
+    position: absolute;
+    top: 65%;
+    left: 79%;
+    background-color: rgb(22, 76, 91);
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 25px;
+}
+
+#decoded {
+    /* border: 2px solid lightgreen;
+    border-radius: 10px;
+    width: 200px; */
+    /* height: 30px; */
+    position: absolute;
+    top: 75px;
+    left: 550px;
+    font-size: medium;
+    height: 30px;
+}
 
 .opa {
     opacity: 0;
     width: 10px;
+}
+
+.btn:hover {
+    background-color: transparent;
+    box-shadow: none;
+    color: darken(white, 10%);
+    width: 100px;
+    height: 25px;
+    color: black;
+    cursor: pointer;
 }

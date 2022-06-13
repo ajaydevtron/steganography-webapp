@@ -1,76 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Steganography</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-      integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
     <script src="steganography.min.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="cont">
-      
 
+        <div class="file-input">
+            <input class="ui primary button" type="file" name="pic" accept="image/*" onchange="readURL(this);" />
+            <div class="ui input">
+                <input id="text" type="text" placeholder="Type Message..." style="margin-left: 10px;" title="Click to write secret message here!" />
+            </div>
 
-        <div class="">
-                  <input
-          class="ui primary button"
-          type="file"
-          name="pic"
-          accept="image/*"
-          onchange="readURL(this);"
-        />
-        <div class="ui input">
-          <input id="text" type="text" />
-        </div>
-
-        <button class="ui secondary button" onclick="hideText()">
+            <button class="ui secondary button" onclick="hideText()" style="margin-left: 10px;" title="Click to hide the message into Image">
           Hide Message Into Image
         </button>
 
         </div>
+
         <div class="img-cont">
-          <div  class="img1">
-            <h5>Source Image</h5>
+            <div id="div-img1">
+                <h5>Source Image</h5>
+                <img id="image1" src="user-image-icon.png" alt="" title="Upload Source Image" />
+            </div>
 
-            <img id="image1" src="" alt="" />
-          </div>
 
+            <div id="div-img2" class="encoded-cont">
+                <h5 style="margin-left: -20px;">Message Encoded Image</h5>
+                <img id="image2" src="" alt="" title="First Upload Source Image">
+                <a id="dwn" href="" download="Encoded-image-file">
+                    <button id="d-btn" class="btn" hidden> Download </button>
+                </a>
 
-          <div class="">
-            <h5>Message Encoded Image</h5>
-            <img id="image2" src="" alt="" />
-
-          </div>
+            </div>
 
         </div>
 
-        
-    <div class="">
 
-      <input class="ui secondary button" type="file" name="pic" accept="image/*" onchange="decode(this);" />
-      <img class = "opa" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
-      <h5>Decoded Text:</h5>
-      <h2 id="decoded"></h2>
+        <div class="decoded-cont">
+
+            <input class="ui secondary button" type="file" name="pic" accept="image/*" onchange="decode(this);" />
+            <img class="opa" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+            <h5 style="text-align: left; margin-left: 250px; color: red;" title="This is your decoded message from Image">Decoded Text:</h5>
+            <br>
+            <textarea id="decoded"></textarea>
+
+        </div>
 
     </div>
-
-
-
-
-
-      
-    </div>
-
-
 
     <script src="index.js"></script>
-  </body>
+</body>
+
 </html>
